@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 #if !NET40
 using System.Runtime.CompilerServices;
@@ -52,7 +53,7 @@ namespace Domore.Notification {
 #endif     
             ) => Change(oldValue, newValue, out _, propertyName);
 
-        protected internal bool Change<T>(
+        protected internal bool Change(
             ref string field,
             string value,
 #if NET40
@@ -86,6 +87,47 @@ namespace Domore.Notification {
         protected internal string Change(
             string oldValue,
             string newValue,
+#if NET40
+            string propertyName
+#else
+            [CallerMemberName] string propertyName = null
+#endif     
+            ) => Change(oldValue, newValue, out _, propertyName);
+
+        protected internal bool Change(
+            ref TimeSpan field,
+            TimeSpan value,
+#if NET40
+            string propertyName
+#else
+            [CallerMemberName] string propertyName = null
+#endif
+            ) {
+            var equal = field == value;
+            if (equal) return false;
+
+            field = value;
+            NotifyPropertyChanged(propertyName);
+            return true;
+        }
+
+        protected internal TimeSpan Change(
+            TimeSpan oldValue,
+            TimeSpan newValue,
+            out bool changed,
+#if NET40
+            string propertyName
+#else
+            [CallerMemberName] string propertyName = null
+#endif     
+            ) {
+            changed = Change(ref oldValue, newValue, propertyName);
+            return oldValue;
+        }
+
+        protected internal TimeSpan Change(
+            TimeSpan oldValue,
+            TimeSpan newValue,
 #if NET40
             string propertyName
 #else
