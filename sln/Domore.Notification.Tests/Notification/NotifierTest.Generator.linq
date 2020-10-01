@@ -1,7 +1,6 @@
 <Query Kind="Statements" />
 
 var types = new[] {
-    "bool",
     "byte",
     "sbyte",
     "char",
@@ -13,8 +12,8 @@ var types = new[] {
     "long",
     "ulong",
     "short",
-    "ushort",
-    "string" };
+    "ushort"
+};
 
 @"using NUnit.Framework;
 
@@ -67,65 +66,47 @@ public void Change_T_1_ReturnsTrue() {
 
 [Test]
 public void Change_T_2_RaisesPropertyChanged() {
+    var field = (T)0;
     var actual = """";
     Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-    Subject.Change((T)0, (T)1, out _, ""expected"");
+    Subject.Change(ref field, (T)1, out _, ""expected"");
     Assert.That(actual, Is.EqualTo(""expected""));
 }
 
 [Test]
 public void Change_T_2_DoesNotRaisePropertyChanged() {
+    var field = (T)0;
     var actual = """";
     Subject.PropertyChanged += (s, e) => actual = ""fail"";
-    Subject.Change((T)0, (T)0, out _, ""expected"");
+    Subject.Change(ref field, (T)0, out _, ""expected"");
     Assert.That(actual, Is.EqualTo(""""));
 }
 
 [Test]
 public void Change_T_2_ChangesValue() {
-    var value = Subject.Change((T)0, (T)1, out _, ""expected"");
+    var field = (T)0;
+    var value = Subject.Change(ref field, (T)1, out _, ""expected"");
     Assert.That(value, Is.EqualTo(1));
 }
 
 [Test]
 public void Change_T_2_SetsChangedFalse() {
-    Subject.Change((T)0, (T)0, out var changed, """");
+    var field = (T)0;
+    Subject.Change(ref field, (T)0, out var changed, """");
     Assert.That(changed, Is.False);
 }
 
 [Test]
 public void Change_T_2_SetsChangedTrue() {
-    Subject.Change((T)0, (T)1, out var changed, """");
+    var field = (T)0;
+    Subject.Change(ref field, (T)1, out var changed, """");
     Assert.That(changed, Is.True);
-}
-
-[Test]
-public void Change_T_3_RaisesPropertyChanged() {
-    var actual = """";
-    Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-    Subject.Change((T)0, (T)1, ""expected"");
-    Assert.That(actual, Is.EqualTo(""expected""));
-}
-
-[Test]
-public void Change_T_3_DoesNotRaisePropertyChanged() {
-    var actual = """";
-    Subject.PropertyChanged += (s, e) => actual = ""fail"";
-    Subject.Change((T)0, (T)0, ""expected"");
-    Assert.That(actual, Is.EqualTo(""""));
-}
-
-[Test]
-public void Change_T_3_ChangesValue() {
-    var value = Subject.Change((T)0, (T)1, ""expected"");
-    Assert.That(value, Is.EqualTo(1));
 }
 "
     .Replace("_T_", $"_{type}_")
     .Replace("(T)", $"({type})")
     .Dump();
 }
-
 @"    }
 }
 ".Dump();

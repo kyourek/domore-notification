@@ -60,58 +60,41 @@ namespace Domore.Notification {
 
         [Test]
         public void Change_T_2_RaisesPropertyChanged() {
+            var field = 0;
             var actual = "";
             Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-            Subject.Change<int>(0, 1, out _, "expected");
+            Subject.Change<int>(ref field, 1, out _, "expected");
             Assert.That(actual, Is.EqualTo("expected"));
         }
 
         [Test]
         public void Change_T_2_DoesNotRaisePropertyChanged() {
+            var field = 0;
             var actual = "";
             Subject.PropertyChanged += (s, e) => actual = "fail";
-            Subject.Change<int>(0, 0, out _, "expected");
+            Subject.Change<int>(ref field, 0, out _, "expected");
             Assert.That(actual, Is.EqualTo(""));
         }
 
         [Test]
         public void Change_T_2_ChangesValue() {
-            var value = Subject.Change<int>(0, 1, out _, "expected");
+            var field = 0;
+            var value = Subject.Change<int>(ref field, 1, out _, "expected");
             Assert.That(value, Is.EqualTo(1));
         }
 
         [Test]
         public void Change_T_2_SetsChangedFalse() {
-            Subject.Change<int>(0, 0, out var changed, "");
+            var field = 0;
+            Subject.Change<int>(ref field, 0, out var changed, "");
             Assert.That(changed, Is.False);
         }
 
         [Test]
         public void Change_T_2_SetsChangedTrue() {
-            Subject.Change<int>(0, 1, out var changed, "");
+            var field = 0;
+            Subject.Change<int>(ref field, 1, out var changed, "");
             Assert.That(changed, Is.True);
-        }
-
-        [Test]
-        public void Change_T_3_RaisesPropertyChanged() {
-            var actual = "";
-            Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-            Subject.Change<int>(0, 1, "expected");
-            Assert.That(actual, Is.EqualTo("expected"));
-        }
-
-        [Test]
-        public void Change_T_3_DoesNotRaisePropertyChanged() {
-            var actual = "";
-            Subject.PropertyChanged += (s, e) => actual = "fail";
-            Subject.Change<int>(0, 0, "expected");
-            Assert.That(actual, Is.EqualTo(""));
-        }
-
-        [Test]
-        public void Change_T_3_ChangesValue() {
-            var value = Subject.Change<int>(0, 1, "expected");
-            Assert.That(value, Is.EqualTo(1));
         }
 
         [Test]
@@ -159,58 +142,41 @@ namespace Domore.Notification {
 
         [Test]
         public void Change_bool_2_RaisesPropertyChanged() {
+            var field = false;
             var actual = "";
             Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-            Subject.Change(false, true, out _, "expected");
+            Subject.Change(ref field, true, out _, "expected");
             Assert.That(actual, Is.EqualTo("expected"));
         }
 
         [Test]
         public void Change_bool_2_DoesNotRaisePropertyChanged() {
+            var field = false;
             var actual = "";
             Subject.PropertyChanged += (s, e) => actual = "fail";
-            Subject.Change(false, false, out _, "expected");
+            Subject.Change(ref field, false, out _, "expected");
             Assert.That(actual, Is.EqualTo(""));
         }
 
         [Test]
         public void Change_bool_2_ChangesValue() {
-            var value = Subject.Change(false, true, out _, "expected");
+            var field = false;
+            var value = Subject.Change(ref field, true, out _, "expected");
             Assert.That(value, Is.EqualTo(true));
         }
 
         [Test]
         public void Change_bool_2_SetsChangedFalse() {
-            Subject.Change(false, false, out var changed, "");
+            var field = false;
+            Subject.Change(ref field, false, out var changed, "");
             Assert.That(changed, Is.False);
         }
 
         [Test]
         public void Change_bool_2_SetsChangedTrue() {
-            Subject.Change(false, true, out var changed, "");
+            var field = false;
+            Subject.Change(ref field, true, out var changed, "");
             Assert.That(changed, Is.True);
-        }
-
-        [Test]
-        public void Change_bool_3_RaisesPropertyChanged() {
-            var actual = "";
-            Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-            Subject.Change(false, true, "expected");
-            Assert.That(actual, Is.EqualTo("expected"));
-        }
-
-        [Test]
-        public void Change_bool_3_DoesNotRaisePropertyChanged() {
-            var actual = "";
-            Subject.PropertyChanged += (s, e) => actual = "fail";
-            Subject.Change(false, false, "expected");
-            Assert.That(actual, Is.EqualTo(""));
-        }
-
-        [Test]
-        public void Change_bool_3_ChangesValue() {
-            var value = Subject.Change(false, true, "expected");
-            Assert.That(value, Is.EqualTo(true));
         }
 
         [Test]
@@ -258,58 +224,41 @@ namespace Domore.Notification {
 
         [Test]
         public void Change_string_2_RaisesPropertyChanged() {
+            var field = "0";
             var actual = "";
             Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-            Subject.Change("0", "1", out _, "expected");
+            Subject.Change(ref field, "1", out _, "expected");
             Assert.That(actual, Is.EqualTo("expected"));
         }
 
         [Test]
         public void Change_string_2_DoesNotRaisePropertyChanged() {
+            var field = "0";
             var actual = "";
             Subject.PropertyChanged += (s, e) => actual = "fail";
-            Subject.Change("0", "0", out _, "expected");
+            Subject.Change(ref field, "0", out _, "expected");
             Assert.That(actual, Is.EqualTo(""));
         }
 
         [Test]
         public void Change_string_2_ChangesValue() {
-            var value = Subject.Change("0", "1", out _, "expected");
+            var field = "0";
+            var value = Subject.Change(ref field, "1", out _, "expected");
             Assert.That(value, Is.EqualTo("1"));
         }
 
         [Test]
         public void Change_string_2_SetsChangedFalse() {
-            Subject.Change("0", "0", out var changed, "");
+            var field = "0";
+            Subject.Change(ref field, "0", out var changed, "");
             Assert.That(changed, Is.False);
         }
 
         [Test]
         public void Change_string_2_SetsChangedTrue() {
-            Subject.Change("0", "1", out var changed, "");
+            var field = "0";
+            Subject.Change(ref field, "1", out var changed, "");
             Assert.That(changed, Is.True);
-        }
-
-        [Test]
-        public void Change_string_3_RaisesPropertyChanged() {
-            var actual = "";
-            Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-            Subject.Change("0", "1", "expected");
-            Assert.That(actual, Is.EqualTo("expected"));
-        }
-
-        [Test]
-        public void Change_string_3_DoesNotRaisePropertyChanged() {
-            var actual = "";
-            Subject.PropertyChanged += (s, e) => actual = "fail";
-            Subject.Change("0", "0", "expected");
-            Assert.That(actual, Is.EqualTo(""));
-        }
-
-        [Test]
-        public void Change_string_3_ChangesValue() {
-            var value = Subject.Change("0", "1", "expected");
-            Assert.That(value, Is.EqualTo("1"));
         }
 
         [Test]
@@ -357,58 +306,41 @@ namespace Domore.Notification {
 
         [Test]
         public void Change_TimeSpan_2_RaisesPropertyChanged() {
+            var field = TimeSpan.Zero;
             var actual = "";
             Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-            Subject.Change(TimeSpan.Zero, new TimeSpan(1), out _, "expected");
+            Subject.Change(ref field, new TimeSpan(1), out _, "expected");
             Assert.That(actual, Is.EqualTo("expected"));
         }
 
         [Test]
         public void Change_TimeSpan_2_DoesNotRaisePropertyChanged() {
+            var field = TimeSpan.Zero;
             var actual = "";
             Subject.PropertyChanged += (s, e) => actual = "fail";
-            Subject.Change(TimeSpan.Zero, TimeSpan.Zero, out _, "expected");
+            Subject.Change(ref field, TimeSpan.Zero, out _, "expected");
             Assert.That(actual, Is.EqualTo(""));
         }
 
         [Test]
         public void Change_TimeSpan_2_ChangesValue() {
-            var value = Subject.Change(TimeSpan.Zero, new TimeSpan(1), out _, "expected");
+            var field = TimeSpan.Zero;
+            var value = Subject.Change(ref field, new TimeSpan(1), out _, "expected");
             Assert.That(value, Is.EqualTo(new TimeSpan(1)));
         }
 
         [Test]
         public void Change_TimeSpan_2_SetsChangedFalse() {
-            Subject.Change(TimeSpan.Zero, TimeSpan.Zero, out var changed, "");
+            var field = TimeSpan.Zero;
+            Subject.Change(ref field, TimeSpan.Zero, out var changed, "");
             Assert.That(changed, Is.False);
         }
 
         [Test]
         public void Change_TimeSpan_2_SetsChangedTrue() {
-            Subject.Change(TimeSpan.Zero, new TimeSpan(1), out var changed, "");
+            var field = TimeSpan.Zero;
+            Subject.Change(ref field, new TimeSpan(1), out var changed, "");
             Assert.That(changed, Is.True);
-        }
-
-        [Test]
-        public void Change_TimeSpan_3_RaisesPropertyChanged() {
-            var actual = "";
-            Subject.PropertyChanged += (s, e) => actual = e.PropertyName;
-            Subject.Change(TimeSpan.Zero, new TimeSpan(1), "expected");
-            Assert.That(actual, Is.EqualTo("expected"));
-        }
-
-        [Test]
-        public void Change_TimeSpan_3_DoesNotRaisePropertyChanged() {
-            var actual = "";
-            Subject.PropertyChanged += (s, e) => actual = "fail";
-            Subject.Change(TimeSpan.Zero, TimeSpan.Zero, "expected");
-            Assert.That(actual, Is.EqualTo(""));
-        }
-
-        [Test]
-        public void Change_TimeSpan_3_ChangesValue() {
-            var value = Subject.Change(TimeSpan.Zero, new TimeSpan(1), "expected");
-            Assert.That(value, Is.EqualTo(new TimeSpan(1)));
         }
     }
 }

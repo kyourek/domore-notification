@@ -36,8 +36,8 @@ foreach (var type in types) {
         }
 
         protected internal T Change(
-            T oldValue,
-            T newValue,
+            ref T field,
+            T value,
             out bool changed,
 #if NET40
             string propertyName
@@ -45,19 +45,9 @@ foreach (var type in types) {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
-        }
-
-        protected internal T Change(
-            T oldValue,
-            T newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);"
+            changed = Change(ref field, value, propertyName);
+            return field;
+        }"
         .Replace(" T ", $" {type} ")
         .Dump();
 }

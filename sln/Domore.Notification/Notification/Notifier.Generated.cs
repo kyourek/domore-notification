@@ -22,8 +22,8 @@ namespace Domore.Notification {
         }
 
         protected internal bool Change(
-            bool oldValue,
-            bool newValue,
+            ref bool field,
+            bool value,
             out bool changed,
 #if NET40
             string propertyName
@@ -31,19 +31,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal bool Change(
-            bool oldValue,
-            bool newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref byte field,
@@ -63,8 +53,8 @@ namespace Domore.Notification {
         }
 
         protected internal byte Change(
-            byte oldValue,
-            byte newValue,
+            ref byte field,
+            byte value,
             out bool changed,
 #if NET40
             string propertyName
@@ -72,19 +62,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal byte Change(
-            byte oldValue,
-            byte newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref sbyte field,
@@ -104,8 +84,8 @@ namespace Domore.Notification {
         }
 
         protected internal sbyte Change(
-            sbyte oldValue,
-            sbyte newValue,
+            ref sbyte field,
+            sbyte value,
             out bool changed,
 #if NET40
             string propertyName
@@ -113,19 +93,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal sbyte Change(
-            sbyte oldValue,
-            sbyte newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref char field,
@@ -145,8 +115,8 @@ namespace Domore.Notification {
         }
 
         protected internal char Change(
-            char oldValue,
-            char newValue,
+            ref char field,
+            char value,
             out bool changed,
 #if NET40
             string propertyName
@@ -154,19 +124,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal char Change(
-            char oldValue,
-            char newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref decimal field,
@@ -186,8 +146,8 @@ namespace Domore.Notification {
         }
 
         protected internal decimal Change(
-            decimal oldValue,
-            decimal newValue,
+            ref decimal field,
+            decimal value,
             out bool changed,
 #if NET40
             string propertyName
@@ -195,19 +155,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal decimal Change(
-            decimal oldValue,
-            decimal newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref double field,
@@ -227,8 +177,8 @@ namespace Domore.Notification {
         }
 
         protected internal double Change(
-            double oldValue,
-            double newValue,
+            ref double field,
+            double value,
             out bool changed,
 #if NET40
             string propertyName
@@ -236,19 +186,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal double Change(
-            double oldValue,
-            double newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref float field,
@@ -268,8 +208,8 @@ namespace Domore.Notification {
         }
 
         protected internal float Change(
-            float oldValue,
-            float newValue,
+            ref float field,
+            float value,
             out bool changed,
 #if NET40
             string propertyName
@@ -277,19 +217,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal float Change(
-            float oldValue,
-            float newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref int field,
@@ -309,8 +239,8 @@ namespace Domore.Notification {
         }
 
         protected internal int Change(
-            int oldValue,
-            int newValue,
+            ref int field,
+            int value,
             out bool changed,
 #if NET40
             string propertyName
@@ -318,19 +248,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal int Change(
-            int oldValue,
-            int newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref uint field,
@@ -350,8 +270,8 @@ namespace Domore.Notification {
         }
 
         protected internal uint Change(
-            uint oldValue,
-            uint newValue,
+            ref uint field,
+            uint value,
             out bool changed,
 #if NET40
             string propertyName
@@ -359,19 +279,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal uint Change(
-            uint oldValue,
-            uint newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref long field,
@@ -391,8 +301,8 @@ namespace Domore.Notification {
         }
 
         protected internal long Change(
-            long oldValue,
-            long newValue,
+            ref long field,
+            long value,
             out bool changed,
 #if NET40
             string propertyName
@@ -400,19 +310,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal long Change(
-            long oldValue,
-            long newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref ulong field,
@@ -432,8 +332,8 @@ namespace Domore.Notification {
         }
 
         protected internal ulong Change(
-            ulong oldValue,
-            ulong newValue,
+            ref ulong field,
+            ulong value,
             out bool changed,
 #if NET40
             string propertyName
@@ -441,19 +341,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal ulong Change(
-            ulong oldValue,
-            ulong newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref short field,
@@ -473,8 +363,8 @@ namespace Domore.Notification {
         }
 
         protected internal short Change(
-            short oldValue,
-            short newValue,
+            ref short field,
+            short value,
             out bool changed,
 #if NET40
             string propertyName
@@ -482,19 +372,9 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
-
-        protected internal short Change(
-            short oldValue,
-            short newValue,
-#if NET40
-            string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
 
         protected internal bool Change(
             ref ushort field,
@@ -514,8 +394,8 @@ namespace Domore.Notification {
         }
 
         protected internal ushort Change(
-            ushort oldValue,
-            ushort newValue,
+            ref ushort field,
+            ushort value,
             out bool changed,
 #if NET40
             string propertyName
@@ -523,18 +403,39 @@ namespace Domore.Notification {
             [CallerMemberName] string propertyName = null
 #endif     
             ) {
-            changed = Change(ref oldValue, newValue, propertyName);
-            return oldValue;
+            changed = Change(ref field, value, propertyName);
+            return field;
         }
 
-        protected internal ushort Change(
-            ushort oldValue,
-            ushort newValue,
+        protected internal bool Change(
+            ref string field,
+            string value,
+#if NET40
+            string propertyName
+#else
+            [CallerMemberName] string propertyName = null
+#endif
+            ) {
+            var equal = field == value;
+            if (equal) return false;
+
+            field = value;
+            NotifyPropertyChanged(propertyName);
+            return true;
+        }
+
+        protected internal string Change(
+            ref string field,
+            string value,
+            out bool changed,
 #if NET40
             string propertyName
 #else
             [CallerMemberName] string propertyName = null
 #endif     
-            ) => Change(oldValue, newValue, out _, propertyName);
+            ) {
+            changed = Change(ref field, value, propertyName);
+            return field;
+        }
     }
 }
