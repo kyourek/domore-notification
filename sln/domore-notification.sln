@@ -7,12 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domore.Notification", "Domo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domore.Notification.Tests", "Domore.Notification.Tests\Domore.Notification.Tests.csproj", "{63BB1E2A-74E8-4B32-909E-795C6A6008AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domore.Notification.Release", "Domore.Notification.Release\Domore.Notification.Release.csproj", "{1F63F0B2-256D-4F7A-B09C-89C17E3694A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domore.Notification.Release", "Domore.Notification.Release\Domore.Notification.Release.csproj", "{1F63F0B2-256D-4F7A-B09C-89C17E3694A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "properties", "properties", "{5D46C8DA-4B76-4C15-8286-0D0A830570FC}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6B215922-6377-44D3-9620-0B5A52194E9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "release", "release", "{74302FDD-AFC7-4224-B40A-CE990AC21D64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +38,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63BB1E2A-74E8-4B32-909E-795C6A6008AC} = {6B215922-6377-44D3-9620-0B5A52194E9E}
+		{1F63F0B2-256D-4F7A-B09C-89C17E3694A7} = {74302FDD-AFC7-4224-B40A-CE990AC21D64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {718E92AD-2E84-4F24-8CF4-31B13471D613}
