@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 
 namespace Domore.Notification {
     [TestFixture]
@@ -95,6 +96,49 @@ namespace Domore.Notification {
             var field = 0;
             Subject.Change<int>(ref field, 1, out var changed, "");
             Assert.That(changed, Is.True);
+        }
+
+        [Test]
+        public void Change_T_3_RaisesPropertyChanged() {
+            var actual = new List<string>();
+            Subject.PropertyChanged += (s, e) => actual.Add(e.PropertyName);
+
+            var field = 0;
+            Subject.Change<int>(ref field, 1, "expected", "dependent expected");
+
+            CollectionAssert.AreEqual(new[] { "expected", "dependent expected" }, actual);
+        }
+
+        [Test]
+        public void Change_T_3_DoesNotRaisePropertyChanged() {
+            var actual = "";
+            Subject.PropertyChanged += (s, e) => actual = "fail";
+
+            var field = 0;
+            Subject.Change<int>(ref field, 0, "expected", "dependent expected");
+
+            Assert.That(actual, Is.EqualTo(""));
+        }
+
+        [Test]
+        public void Change_T_3_ChangesValue() {
+            var field = 0;
+            Subject.Change<int>(ref field, 1, "expected", "dependent expected");
+            Assert.That(field, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Change_T_3_ReturnsFalse() {
+            var field = 0;
+            var actual = Subject.Change<int>(ref field, 0, "", "dependent");
+            Assert.That(actual, Is.False);
+        }
+
+        [Test]
+        public void Change_T_3_ReturnsTrue() {
+            var field = 0;
+            var actual = Subject.Change<int>(ref field, 1, "", "dependent");
+            Assert.That(actual, Is.True);
         }
 
         [Test]

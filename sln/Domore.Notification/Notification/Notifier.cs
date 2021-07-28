@@ -17,10 +17,12 @@ namespace Domore.Notification {
         protected internal bool Change<T>(
             ref T field,
             T value,
-#if NET40
+#if !NET40
+            [CallerMemberName]
+#endif
             string propertyName
-#else
-            [CallerMemberName] string propertyName = null
+#if !NET40
+            = null
 #endif
             ) {
             var equal = Equals(field, value);
@@ -31,15 +33,41 @@ namespace Domore.Notification {
             return true;
         }
 
+        protected internal bool Change<T>(
+            ref T field,
+            T value,
+#if !NET40
+            [CallerMemberName]
+#endif
+            string propertyName
+#if !NET40
+            = null
+#endif
+            ,
+            params string[] dependentPropertyNames
+            ) {
+            var changed = Change(ref field, value, propertyName);
+            if (changed) {
+                if (dependentPropertyNames != null) {
+                    foreach (var dependentPropertyName in dependentPropertyNames) {
+                        NotifyPropertyChanged(dependentPropertyName);
+                    }
+                }
+            }
+            return changed;
+        }
+
         protected internal T Change<T>(
             ref T field,
             T value,
             out bool changed,
-#if NET40
+#if !NET40
+            [CallerMemberName]
+#endif
             string propertyName
-#else
-            [CallerMemberName] string propertyName = null
-#endif     
+#if !NET40
+            = null
+#endif
             ) {
             changed = Change(ref field, value, propertyName);
             return field;
