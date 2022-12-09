@@ -2,7 +2,7 @@
 <Project>
   <PropertyGroup>
     <Authors>Ken Yourek</Authors>
-    <Copyright>Copyright © Ken Yourek 2020</Copyright>
+    <Copyright>Copyright © Ken Yourek 2020-2022</Copyright>
     <VersionPrefix>1.1.0.9</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <AssemblyVersion>1.1.0.9</AssemblyVersion>
