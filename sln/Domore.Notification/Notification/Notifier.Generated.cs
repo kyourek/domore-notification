@@ -33,31 +33,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref bool field, bool value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref bool field, bool value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -87,31 +77,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref bool? field, bool? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref bool? field, bool? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -141,31 +121,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref byte field, byte value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref byte field, byte value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -195,31 +165,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref byte? field, byte? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref byte? field, byte? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -249,31 +209,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref sbyte field, sbyte value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref sbyte field, sbyte value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -303,31 +253,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref sbyte? field, sbyte? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref sbyte? field, sbyte? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -357,31 +297,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref char field, char value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref char field, char value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -411,31 +341,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref char? field, char? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref char? field, char? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -465,31 +385,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref decimal field, decimal value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref decimal field, decimal value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -519,31 +429,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref decimal? field, decimal? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref decimal? field, decimal? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -573,31 +473,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref double field, double value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref double field, double value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -627,31 +517,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref double? field, double? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref double? field, double? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -681,31 +561,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref float field, float value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref float field, float value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -735,31 +605,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref float? field, float? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref float? field, float? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -789,31 +649,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref int field, int value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref int field, int value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -843,31 +693,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref int? field, int? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref int? field, int? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -897,31 +737,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref uint field, uint value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref uint field, uint value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -951,31 +781,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref uint? field, uint? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref uint? field, uint? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1005,31 +825,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref nint field, nint value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref nint field, nint value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1059,31 +869,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref nint? field, nint? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref nint? field, nint? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1113,31 +913,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref nuint field, nuint value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref nuint field, nuint value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1167,31 +957,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref nuint? field, nuint? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref nuint? field, nuint? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1221,31 +1001,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref long field, long value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref long field, long value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1275,31 +1045,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref long? field, long? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref long? field, long? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1329,31 +1089,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref ulong field, ulong value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref ulong field, ulong value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1383,31 +1133,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref ulong? field, ulong? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref ulong? field, ulong? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1437,31 +1177,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref short field, short value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref short field, short value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1491,31 +1221,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref short? field, short? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref short? field, short? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1545,31 +1265,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref ushort field, ushort value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref ushort field, ushort value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1599,31 +1309,21 @@ namespace Domore.Notification {
             ) {
             if (field == value) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref ushort? field, ushort? value, PropertyChangedEventArgs e) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref ushort? field, ushort? value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (field == value) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change(
@@ -1653,31 +1353,21 @@ namespace Domore.Notification {
             ) {
             if (string.Equals(field, value)) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change(ref string field, string value, PropertyChangedEventArgs e) {
             if (string.Equals(field, value)) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change(ref string field, string value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (string.Equals(field, value)) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
         protected internal bool Change<T>(
@@ -1707,31 +1397,21 @@ namespace Domore.Notification {
             ) {
             if (EqualityComparer<T>.Default.Equals(field, value)) return false;
             field = value;
-            NotifyPropertyChanged(propertyName);
-            if (dependentPropertyNames != null) {
-                foreach (var dependentPropertyName in dependentPropertyNames) {
-                    NotifyPropertyChanged(dependentPropertyName);
-                }
-            }
+            NotifyPropertyChanged(propertyName, dependentPropertyNames);
             return true;
         }
         
         protected internal bool Change<T>(ref T field, T value, PropertyChangedEventArgs e) {
             if (EqualityComparer<T>.Default.Equals(field, value)) return false;
             field = value;
-            OnPropertyChanged(e);
+            NotifyPropertyChanged(e);
             return true;
         }
         
         protected internal bool Change<T>(ref T field, T value, PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
             if (EqualityComparer<T>.Default.Equals(field, value)) return false;
             field = value;
-            OnPropertyChanged(e);
-            if (dependents != null) {
-                foreach (var dependent in dependents) {
-                    OnPropertyChanged(dependent);
-                }
-            }
+            NotifyPropertyChanged(e, dependents);
             return true;
         }
     }

@@ -7,6 +7,8 @@ namespace Domore.Notification {
     using ComponentModel;
 
     public partial class Notifier : NotifyPropertyChangedImplementation {
+        private static readonly PropertyChangedEventArgs EmptyEventArgs = new PropertyChangedEventArgs(string.Empty);
+
 #if !NET40
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
@@ -14,11 +16,36 @@ namespace Domore.Notification {
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
         }
 
+        protected void NotifyPropertyChanged(string propertyName, params string[] dependentPropertyNames) {
+            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+            if (dependentPropertyNames != null) {
+                foreach (var dependentPropertyName in dependentPropertyNames) {
+                    OnPropertyChanged(new PropertyChangedEventArgs(dependentPropertyName));
+                }
+            }
+        }
+
+#if !NET40
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#endif
+        protected void NotifyPropertyChanged(PropertyChangedEventArgs e) {
+            OnPropertyChanged(e);
+        }
+
+        protected void NotifyPropertyChanged(PropertyChangedEventArgs e, params PropertyChangedEventArgs[] dependents) {
+            OnPropertyChanged(e);
+            if (dependents != null) {
+                foreach (var dependent in dependents) {
+                    OnPropertyChanged(dependent);
+                }
+            }
+        }
+
 #if !NET40
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         protected void NotifyPropertyChanged() {
-            NotifyPropertyChanged(string.Empty);
+            NotifyPropertyChanged(EmptyEventArgs);
         }
     }
 }
