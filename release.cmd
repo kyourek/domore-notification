@@ -1,1 +1,1 @@
-dotnet .\sln\Domore.Notification.Release\bin\Debug\netcoreapp3.1\Domore.Notification.Release.dll %*
+dotnet .\sln\Domore.Notification.Release\bin\Debug\net6.0\Domore.Notification.Release.dll %*
