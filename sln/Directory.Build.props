@@ -3,17 +3,17 @@
   <PropertyGroup>
     <Authors>Ken Yourek</Authors>
     <Copyright>Copyright © Ken Yourek 2020-2022</Copyright>
-    <VersionPrefix>2.1.0.11</VersionPrefix>
+    <VersionPrefix>2.2.0.12</VersionPrefix>
     <VersionSuffix></VersionSuffix>
-    <AssemblyVersion>2.1.0.11</AssemblyVersion>
-    <InformationalVersion>2.1.0.11</InformationalVersion>
-    <FileVersion>2.2.0.11</FileVersion>
-    <PackageVersion>2.1.0.11</PackageVersion>
+    <AssemblyVersion>2.2.0.12</AssemblyVersion>
+    <InformationalVersion>2.2.0.12</InformationalVersion>
+    <FileVersion>2.2.0.12</FileVersion>
+    <PackageVersion>2.2.0.12</PackageVersion>
     <PackageProjectUrl>https://github.com/kyourek/domore-notification</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/kyourek/domore-notification.git</RepositoryUrl>
     <RepositoryBranch>master</RepositoryBranch>
-    <RepositoryCommit>03892209e7a989fdfc2b902bd504678456035abb</RepositoryCommit>
+    <RepositoryCommit>3f6ea04f4ca83d6740c50ba7b162371672486a6d</RepositoryCommit>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags></PackageTags>
