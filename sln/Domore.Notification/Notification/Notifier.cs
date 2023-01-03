@@ -9,6 +9,17 @@ namespace Domore.Notification {
     public partial class Notifier : NotifyPropertyChangedImplementation {
         private static readonly PropertyChangedEventArgs EmptyEventArgs = new PropertyChangedEventArgs(string.Empty);
 
+        protected internal bool NotifyState { get; set; } = true;
+
+#if !NET40
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#endif
+        protected internal override void OnPropertyChanged(PropertyChangedEventArgs e) {
+            if (NotifyState) {
+                base.OnPropertyChanged(e);
+            }
+        }
+
 #if !NET40
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif

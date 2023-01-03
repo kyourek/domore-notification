@@ -7,7 +7,7 @@
     <VersionSuffix></VersionSuffix>
     <AssemblyVersion>2.1.0.11</AssemblyVersion>
     <InformationalVersion>2.1.0.11</InformationalVersion>
-    <FileVersion>2.1.0.11</FileVersion>
+    <FileVersion>2.2.0.11</FileVersion>
     <PackageVersion>2.1.0.11</PackageVersion>
     <PackageProjectUrl>https://github.com/kyourek/domore-notification</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
